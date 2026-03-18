@@ -52,6 +52,13 @@ jobs:
         with:
           name: build-output
           path: dist/
+      - name: Write job summary                              # <-- add from here
+        run: |
+          echo "## Build Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Build time:** $(date -u)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Node version:** $(node --version)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Artifact:** build-output (dist/)" >> $GITHUB_STEP_SUMMARY
 
   test:
     needs: [lint, build]
