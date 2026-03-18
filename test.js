@@ -8,4 +8,8 @@ console.log('✓ addition test passed');
 assert.strictEqual(typeof 'hello', 'string', 'hello should be a string');
 console.log('✓ string test passed');
 
+// Test 3: intentional failure
+assert.strictEqual(1 + 1, 3, '1 + 1 should equal 3');
+console.log('✓ math test passed');
+
 console.log('\nAll tests passed!');
